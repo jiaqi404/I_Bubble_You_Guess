@@ -3,19 +3,28 @@ using UnityEngine;
 
 public class PromptPanelManager : MonoBehaviour
 {
-    public float duration;
+    public float panelExistDuration;
     public TextMeshProUGUI counterText;
+    public GameObject countDownPanel;
+    public TextMeshProUGUI countDownInfoText;
+    int countDown;
     float counter;
     int counterRevert;
+
+    private void Start()
+    {
+        
+    }
 
     void Update()
     {
         counter += Time.deltaTime;
-        counterRevert = (int)(duration - counter) + 1;
+        counterRevert = (int)(panelExistDuration - counter + 1);
         counterText.text = counterRevert.ToString();
-        if (counter > duration)
+        if (counter > panelExistDuration)
         {
             gameObject.SetActive(false);
+            countDownPanel.SetActive(true);
         }
     }
 }
