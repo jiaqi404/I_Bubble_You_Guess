@@ -1343,7 +1343,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 271982eef0034a04a97cef2aa36e6c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BubbleMaterial: {fileID: 2100000, guid: cc900a4e3c4a93f4eae8eaa2803152dc, type: 2}
+  BubbleDestroyMaterial: {fileID: 2100000, guid: fc07431e07c2b6e41974f72b46f8243d, type: 2}
   bubble: {fileID: 6120201004792576767, guid: bdcced608cd40104dbf25e46402682b5, type: 3}
+  minSize: 0.2
+  maxSize: 2
+  sizeSpeed: 0.3
 --- !u!4 &497650154
 Transform:
   m_ObjectHideFlags: 0
