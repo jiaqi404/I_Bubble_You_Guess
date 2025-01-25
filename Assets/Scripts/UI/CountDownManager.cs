@@ -1,18 +1,38 @@
 using TMPro;
 using UnityEngine;
 
-public class CountDownManager : MonoBehaviour
+public class countdownManager : MonoBehaviour
 {
-    public int countDown;
-    public TextMeshProUGUI countDownText;
+    public TextMeshProUGUI countdownText;
+    public GameObject endingPanel;
+    public SettingsManager settingsManager;
+
+    int countdown;
     float counter;
     int counterRevert;
+
+    void Start()
+    {
+        countdown = settingsManager.countdown;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        counter += Time.deltaTime;
-        counterRevert = (int)(countDown - counter + 1);
-        countDownText.text = counterRevert.ToString();
+        if (counter > countdown)
+        {
+            GameEnd();
+        }
+        else
+        {
+            counter += Time.deltaTime;
+            counterRevert = (int)(countdown - counter + 1);
+            countdownText.text = counterRevert.ToString();
+        }
+    }
+
+    void GameEnd()
+    {
+        endingPanel.SetActive(true);
     }
 }

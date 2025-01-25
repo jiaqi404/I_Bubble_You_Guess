@@ -4,16 +4,21 @@ using UnityEngine;
 public class PromptPanelManager : MonoBehaviour
 {
     public float panelExistDuration;
-    public TextMeshProUGUI counterText;
     public GameObject countDownPanel;
+    public TextMeshProUGUI promtText;
     public TextMeshProUGUI countDownInfoText;
-    int countDown;
+    public TextMeshProUGUI counterText;
+    public SettingsManager settingsManager;
+
     float counter;
     int counterRevert;
 
-    private void Start()
+    void Start()
     {
-        
+        string prompt = settingsManager.prompt;
+        promtText.text = prompt;
+        int countdown = settingsManager.countdown;
+        countDownInfoText.text = "In " + countdown + " seconds!";
     }
 
     void Update()
