@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class countdownManager : MonoBehaviour
 {
-    public TextMeshProUGUI countdownText;
     public GameObject endingPanel;
     public SettingsManager settingsManager;
 
+    TextMeshProUGUI countdownText;
     int countdown;
     float counter;
     int counterRevert;
@@ -14,6 +14,7 @@ public class countdownManager : MonoBehaviour
     void Start()
     {
         countdown = settingsManager.countdown;
+        countdownText = gameObject.GetComponentInChildren<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -27,7 +28,14 @@ public class countdownManager : MonoBehaviour
         {
             counter += Time.deltaTime;
             counterRevert = (int)(countdown - counter + 1);
-            countdownText.text = counterRevert.ToString();
+            if (counterRevert < 6)
+            {
+                countdownText.text = "<color=red>"+counterRevert.ToString()+"</color>";
+            }
+            else
+            {
+                countdownText.text = counterRevert.ToString();
+            }
         }
     }
 
