@@ -12,6 +12,9 @@ public class StartMenuManager : MonoBehaviour
     public GameObject countDownPanel;
     public GameObject endingPanel;
 
+    BubbleSpawnPC bubbleSpawnPC;
+    CameraPCController cameraPCController;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,12 +27,21 @@ public class StartMenuManager : MonoBehaviour
         promptPanel.SetActive(false);
         countDownPanel.SetActive(false);
         endingPanel.SetActive(false);
+
+        bubbleSpawnPC = FindFirstObjectByType<BubbleSpawnPC>();
+        bubbleSpawnPC.enabled = false;
+
+        cameraPCController = FindFirstObjectByType<CameraPCController>();
+        cameraPCController.enabled = false;
     }
 
     void GameStart()
     {
         startMenu.SetActive(false);
         promptPanel.SetActive(true);
+
+        bubbleSpawnPC.enabled = true;
+        cameraPCController.enabled = true;
     }
 
     void GameExit()
