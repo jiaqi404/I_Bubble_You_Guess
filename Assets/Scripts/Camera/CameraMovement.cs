@@ -9,7 +9,7 @@ public class CameraMovement : MonoBehaviour
     [Header("testing component")]
     [Range(0,360)]
     public float horizonalAngle;
-    [Range(10,45)]
+    [Range(-10,45)]
     public float verticalAngle;
     public void UpdateRotation()
     {
