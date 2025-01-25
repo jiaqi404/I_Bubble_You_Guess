@@ -5602,8 +5602,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0efc973e0adc943bc7ba3dc97322bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: []
-  clip: {fileID: 0}
+  buttons:
+  - {fileID: 799608339}
+  - {fileID: 1832779626}
+  - {fileID: 1150434465}
+  - {fileID: 256033821}
+  clip: {fileID: 8300000, guid: 25702d354458e834cb1638f1e217f2f3, type: 3}
 --- !u!82 &1723032428
 AudioSource:
   m_ObjectHideFlags: 0

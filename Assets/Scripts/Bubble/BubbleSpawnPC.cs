@@ -61,6 +61,10 @@ public class BubbleSpawnPC : MonoBehaviour
             newBubble.transform.DOScale(targetScale , 1f).SetEase(Ease.OutBounce);
 
             newBubble.AddComponent(typeof(CanBuildOnThis));
+
+            // Add bubble generate sound effect
+            AudioClipsPlay audioClipsPlay = FindFirstObjectByType<AudioClipsPlay>();
+            audioClipsPlay.PlayAudioClip(0);
         }
 
         if(tempSpawn!=null)
@@ -98,6 +102,10 @@ public class BubbleSpawnPC : MonoBehaviour
         }
         if(Input.GetMouseButtonDown(0) && tempSpawn!= null)
         {
+            // Add bubble generate sound effect
+            AudioClipsPlay audioClipsPlay = FindFirstObjectByType<AudioClipsPlay>();
+            audioClipsPlay.PlayAudioClip(1);
+
             stop = true;
             tempSpawn.transform.DOScale(Vector3.zero , .5f).SetEase(Ease.OutSine)
             .OnComplete(()=>{
