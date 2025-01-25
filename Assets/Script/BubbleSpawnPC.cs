@@ -13,8 +13,10 @@ public class BubbleSpawnPC : MonoBehaviour
     private GameObject tempSpawn;
     private Vector3 initSize = Vector3.one;
     private bool buildMode =true;
+    private bool stop = false;
     private void Update()
     {
+        if(stop)return;
         if(buildMode)BuildModeUpdate();
         else DestroyModeUpdate();
     }
@@ -96,10 +98,12 @@ public class BubbleSpawnPC : MonoBehaviour
         }
         if(Input.GetMouseButtonDown(0) && tempSpawn!= null)
         {
-
+            stop = true;
             tempSpawn.transform.DOScale(Vector3.zero , .5f).SetEase(Ease.OutSine)
-            .OnComplete(()=>Destroy(tempSpawn));
-            tempSpawn =null;
+            .OnComplete(()=>{
+                Destroy(tempSpawn);
+                tempSpawn=null;
+                stop =false;});
         }
 
         if(Input.GetMouseButtonDown(1))
