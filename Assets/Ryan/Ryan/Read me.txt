@@ -1,0 +1,3 @@
+1. Window -> Package manager -> XR Hands, XR Interation Toolkit -> sample
+2. Edit -> project setting -> open XR -> enabled interaction profiles -> Hand Hand Meta Hand
+3. XR origin -> right controller -> smooth turn enabled
