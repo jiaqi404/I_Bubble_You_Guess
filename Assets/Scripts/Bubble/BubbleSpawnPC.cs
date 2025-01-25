@@ -102,7 +102,7 @@ public class BubbleSpawnPC : MonoBehaviour
         }
         if(Input.GetMouseButtonDown(0) && tempSpawn!= null)
         {
-            // Add bubble generate sound effect
+            // Add bubble disappear sound effect
             AudioClipsPlay audioClipsPlay = FindFirstObjectByType<AudioClipsPlay>();
             audioClipsPlay.PlayAudioClip(1);
 

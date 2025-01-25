@@ -59,7 +59,7 @@ Material:
     - _noiseSpeed: 0.1
     m_Colors:
     - _color: {r: 0, g: 0.50782603, b: 1, a: 0}
-    - _waterColor: {r: 0, g: 0.5619312, b: 0.7830189, a: 0}
-    - _waveColor: {r: 0.4198113, g: 0.7679245, b: 1, a: 0}
+    - _waterColor: {r: 0, g: 0.36905813, b: 0.78431374, a: 0}
+    - _waveColor: {r: 0.8431372, g: 0.7327044, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

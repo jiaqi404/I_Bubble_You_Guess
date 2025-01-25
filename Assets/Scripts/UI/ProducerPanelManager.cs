@@ -5,6 +5,7 @@ public class ProducerPanelManager : MonoBehaviour
 {
     public Button closeBtn;
     public GameObject startMenu;
+    public GameObject creditPanelPlus;
     void Start()
     {
         closeBtn.onClick.AddListener(ClosePanel);
@@ -12,7 +13,7 @@ public class ProducerPanelManager : MonoBehaviour
 
     void ClosePanel()
     {
-        gameObject.SetActive(false);
+        creditPanelPlus.SetActive(false);
         startMenu.SetActive(true);
     }
 }

@@ -11,6 +11,7 @@ public class StartMenuManager : MonoBehaviour
     public GameObject promptPanel;
     public GameObject countDownPanel;
     public GameObject endingPanel;
+    public GameObject pausePanel;
 
     BubbleSpawnPC bubbleSpawnPC;
     CameraPCController cameraPCController;
@@ -27,6 +28,7 @@ public class StartMenuManager : MonoBehaviour
         promptPanel.SetActive(false);
         countDownPanel.SetActive(false);
         endingPanel.SetActive(false);
+        pausePanel.SetActive(false);
 
         bubbleSpawnPC = FindFirstObjectByType<BubbleSpawnPC>();
         bubbleSpawnPC.enabled = false;

@@ -15,6 +15,10 @@ public class EndingPanelManager : MonoBehaviour
         string prompt = settingsManager.prompt;
         Debug.Log(prompt);
         propmtRevealText.text = "It's a " + prompt + "!";
+
+        // Add stop sound effect
+        AudioClipsPlay audioClipsPlay = FindFirstObjectByType<AudioClipsPlay>();
+        audioClipsPlay.PlayAudioClip(2);
     }
 
     void restartGame()

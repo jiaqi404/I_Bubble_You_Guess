@@ -14,7 +14,7 @@ public class SettingsManager : MonoBehaviour
 
     string GetOnePrompt()
     {
-        randomIndex = Random.Range(0, prompts.Length);
+        randomIndex = Random.Range(0, prompts.Length - 1);
         return prompts[randomIndex];
     }
 }
