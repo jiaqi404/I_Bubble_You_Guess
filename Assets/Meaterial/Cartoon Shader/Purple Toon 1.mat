@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-592043911954768586
+--- !u!114 &-7203181916471814645
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,13 +20,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wateramterial
-  m_Shader: {fileID: -6465566751694194690, guid: 0232f995c4dc3534e8cf62be24c418b3, type: 3}
+  m_Name: Purple Toon 1
+  m_Shader: {fileID: -6465566751694194690, guid: 2d0e73c89f0687e4bbda646a1fe5f86b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -37,6 +37,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Base_Texture:
+        m_Texture: {fileID: 2800000, guid: 71b0d83f7e24e7744afbf25ba86bb273, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -53,13 +57,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _alpha: 0.67
-    - _amplitude: 0.5
-    - _noiseScale: 20
-    - _noiseSpeed: 0.1
     m_Colors:
-    - _color: {r: 0, g: 0.50782603, b: 1, a: 0}
-    - _waterColor: {r: 0, g: 0.5619312, b: 0.7830189, a: 0}
-    - _waveColor: {r: 0.4198113, g: 0.7679245, b: 1, a: 0}
+    - _color: {r: 0.5968513, g: 0.82737076, b: 0.99371064, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
