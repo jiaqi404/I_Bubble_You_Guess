@@ -9,6 +9,7 @@ public class StartMenuManager : MonoBehaviour
     public GameObject startMenu;
     public GameObject producerPanel;
     public GameObject promptPanel;
+    public GameObject countDownPanel;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,6 +21,7 @@ public class StartMenuManager : MonoBehaviour
         startMenu.SetActive(true);
         producerPanel.SetActive(false);
         promptPanel.SetActive(false);
+        countDownPanel.SetActive(false);
     }
 
     void GameStart()
