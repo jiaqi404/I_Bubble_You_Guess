@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using DG.Tweening;
 
 public class BubbleSpawnPC : MonoBehaviour
 {
@@ -51,8 +52,13 @@ public class BubbleSpawnPC : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && tempSpawn!= null)
         {
             initSize = tempSpawn.transform.localScale;
-            tempSpawn.AddComponent(typeof(CanBuildOnThis));
-            tempSpawn =null;
+
+            GameObject newBubble = Instantiate(tempSpawn , tempSpawn.transform.position ,tempSpawn.transform.rotation);
+            Vector3 targetScale = newBubble.transform.localScale;
+            newBubble.transform.localScale= Vector3.zero;
+            newBubble.transform.DOScale(targetScale , 1f).SetEase(Ease.OutBounce);
+
+            newBubble.AddComponent(typeof(CanBuildOnThis));
         }
 
         if(tempSpawn!=null)
@@ -90,7 +96,10 @@ public class BubbleSpawnPC : MonoBehaviour
         }
         if(Input.GetMouseButtonDown(0) && tempSpawn!= null)
         {
-            Destroy(tempSpawn);
+
+            tempSpawn.transform.DOScale(Vector3.zero , .5f).SetEase(Ease.OutSine)
+            .OnComplete(()=>Destroy(tempSpawn));
+            tempSpawn =null;
         }
 
         if(Input.GetMouseButtonDown(1))
