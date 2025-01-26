@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,13 +6,14 @@ public class StartMenuManager : MonoBehaviour
 {
     public Button startBtn;
     public Button exitBtn;
-    public Button producerBtn;
+    public Button creditBtn;
     public GameObject startMenu;
-    public GameObject producerPanel;
+    public GameObject creditPanel;
     public GameObject promptPanel;
     public GameObject countDownPanel;
     public GameObject endingPanel;
     public GameObject pausePanel;
+    public GameObject startMenuBG;
 
     BubbleSpawnPC bubbleSpawnPC;
     CameraPCController cameraPCController;
@@ -21,10 +23,11 @@ public class StartMenuManager : MonoBehaviour
     {
         startBtn.onClick.AddListener(GameStart);
         exitBtn.onClick.AddListener(GameExit);
-        producerBtn.onClick.AddListener(Producers);
+        creditBtn.onClick.AddListener(ShowCredits);
 
         startMenu.SetActive(true);
-        producerPanel.SetActive(false);
+        startMenuBG.SetActive(true);
+        creditPanel.SetActive(false);
         promptPanel.SetActive(false);
         countDownPanel.SetActive(false);
         endingPanel.SetActive(false);
@@ -40,6 +43,7 @@ public class StartMenuManager : MonoBehaviour
     void GameStart()
     {
         startMenu.SetActive(false);
+        startMenuBG.SetActive(false);
         promptPanel.SetActive(true);
 
         bubbleSpawnPC.enabled = true;
@@ -52,9 +56,9 @@ public class StartMenuManager : MonoBehaviour
         Debug.Log("Game Exit!");
     }
 
-    void Producers()
+    void ShowCredits()
     {
         startMenu.SetActive(false);
-        producerPanel.SetActive(true);
+        creditPanel.SetActive(true);
     }
 }
